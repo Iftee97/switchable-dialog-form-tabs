@@ -33,7 +33,7 @@ export default function AccountTab({
 }: {
   formState: FormState,
   setFormState: (state: FormState) => void,
-    setActiveTab: (tab: "account" | "password" | "email") => void,
+  setActiveTab: (tab: "account" | "password" | "email") => void,
 }) {
   return (
     <Card>
@@ -67,7 +67,7 @@ export default function AccountTab({
           />
         </div>
       </CardContent>
-      <CardFooter>
+      <CardFooter className="justify-end">
         <Button
           onClick={() => {
             setActiveTab("email")

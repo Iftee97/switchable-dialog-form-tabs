@@ -53,7 +53,7 @@ export default function EmailTab({
           />
         </div>
       </CardContent>
-      <CardFooter className="flex items-center gap-4">
+      <CardFooter className="flex items-center justify-between">
         <Button
           onClick={() => {
             setActiveTab("account")
