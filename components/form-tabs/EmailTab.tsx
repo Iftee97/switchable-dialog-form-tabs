@@ -45,6 +45,7 @@ export default function EmailTab({
           <Input
             id="email"
             type="email"
+            placeholder="jondoe@email.com"
             value={formState.email}
             onChange={(e) => setFormState({
               ...formState,

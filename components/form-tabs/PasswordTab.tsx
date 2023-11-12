@@ -44,6 +44,7 @@ export default function PasswordTab({
           <Input
             id="current"
             type="password"
+            placeholder="super secret"
             value={formState.password}
             onChange={(e) => setFormState({
               ...formState,
@@ -56,6 +57,7 @@ export default function PasswordTab({
           <Input
             id="new"
             type="password"
+            placeholder="super secret"
             value={formState.newPassword}
             onChange={(e) => setFormState({
               ...formState,

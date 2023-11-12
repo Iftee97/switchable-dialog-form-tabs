@@ -48,6 +48,7 @@ export default function AccountTab({
           <Label htmlFor="name">Name</Label>
           <Input
             id="name"
+            placeholder="John Doe"
             value={formState.name}
             onChange={(e) => setFormState({
               ...formState,
@@ -59,6 +60,7 @@ export default function AccountTab({
           <Label htmlFor="username">Username</Label>
           <Input
             id="username"
+            placeholder="@johndoe"
             value={formState.username}
             onChange={(e) => setFormState({
               ...formState,
