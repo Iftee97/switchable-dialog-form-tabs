@@ -56,6 +56,7 @@ export default function EmailTab({
       </CardContent>
       <CardFooter className="flex items-center justify-between">
         <Button
+          variant="secondary"
           onClick={() => {
             setActiveTab("account")
           }}
@@ -63,6 +64,7 @@ export default function EmailTab({
           Previous
         </Button>
         <Button
+          variant="secondary"
           onClick={() => {
             setActiveTab("password")
           }}
