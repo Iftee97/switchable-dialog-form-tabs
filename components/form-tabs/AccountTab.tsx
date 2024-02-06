@@ -71,6 +71,7 @@ export default function AccountTab({
       </CardContent>
       <CardFooter className="justify-end">
         <Button
+          variant="secondary"
           onClick={() => {
             setActiveTab("email")
           }}
