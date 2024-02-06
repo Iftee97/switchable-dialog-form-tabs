@@ -68,6 +68,7 @@ export default function PasswordTab({
       </CardContent>
       <CardFooter className="flex items-center justify-between">
         <Button
+          variant="secondary"
           onClick={() => {
             setActiveTab("email")
           }}
@@ -75,7 +76,7 @@ export default function PasswordTab({
           Previous
         </Button>
         <DialogTrigger asChild>
-          <Button type="submit">
+          <Button type="submit" className="bg-green-400 hover:bg-green-500">
             Save changes
           </Button>
         </DialogTrigger>
