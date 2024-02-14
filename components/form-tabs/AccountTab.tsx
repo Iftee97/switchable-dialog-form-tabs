@@ -20,12 +20,6 @@ interface FormState {
   newPassword: string
 }
 
-// interface AccountTabProps {
-//   formState: FormState
-//   setFormState: (state: FormState) => void
-//   setActiveTab: (tab: string) => void
-// }
-
 export default function AccountTab({
   formState,
   setFormState,

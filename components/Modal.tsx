@@ -76,50 +76,150 @@ export default function Modal() {
                 <TabsTrigger value="password">Password</TabsTrigger>
               </TabsList>
               <TabsContent value="account">
-                {/* <Card>
-                <CardHeader>
-                  <CardTitle>Account</CardTitle>
-                  <CardDescription>
-                    Make changes to your account here. Click save when you're done.
-                  </CardDescription>
-                </CardHeader>
-                <CardContent className="space-y-2">
-                  <div className="space-y-1">
-                    <Label htmlFor="name">Name</Label>
-                    <Input
-                      id="name"
-                      value={formState.name}
-                      onChange={(e) => setFormState({
-                        ...formState,
-                        name: e.target.value
-                      })}
-                    />
-                  </div>
-                  <div className="space-y-1">
-                    <Label htmlFor="username">
-                      Username
-                    </Label>
-                    <Input
-                      type="text"
-                      id="username"
-                      value={formState.username}
-                      onChange={(e) => setFormState({
-                        ...formState,
-                        username: e.target.value
-                      })}
-                    />
-                  </div>
-                </CardContent>
-                <CardFooter>
-                  <Button
-                    onClick={() => {
-                      setActiveTab("email")
-                    }}
-                  >
-                    Next
-                  </Button>
-                </CardFooter>
-              </Card> */}
+                <Card>
+                  <CardHeader>
+                    <CardTitle>Account</CardTitle>
+                    <CardDescription>
+                      Make changes to your account here. Click save when you're done.
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent className="space-y-2">
+                    <div className="space-y-1">
+                      <Label htmlFor="name">Name</Label>
+                      <Input
+                        id="name"
+                        value={formState.name}
+                        onChange={(e) => setFormState({
+                          ...formState,
+                          name: e.target.value
+                        })}
+                      />
+                    </div>
+                    <div className="space-y-1">
+                      <Label htmlFor="username">
+                        Username
+                      </Label>
+                      <Input
+                        type="text"
+                        id="username"
+                        value={formState.username}
+                        onChange={(e) => setFormState({
+                          ...formState,
+                          username: e.target.value
+                        })}
+                      />
+                    </div>
+                  </CardContent>
+                  <CardFooter>
+                    <Button
+                      onClick={() => {
+                        setActiveTab("email")
+                      }}
+                    >
+                      Next
+                    </Button>
+                  </CardFooter>
+                </Card>
+              </TabsContent>
+              <TabsContent value="email">
+                <Card>
+                  <CardHeader>
+                    <CardTitle>Email</CardTitle>
+                    <CardDescription>
+                      Change your email here. After saving, you'll be logged out.
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent className="space-y-2">
+                    <div className="space-y-1">
+                      <Label htmlFor="email">
+                        Email
+                      </Label>
+                      <Input
+                        id="email"
+                        type="email"
+                        value={formState.email}
+                        onChange={(e) => setFormState({
+                          ...formState,
+                          email: e.target.value
+                        })}
+                      />
+                    </div>
+                  </CardContent>
+                  <CardFooter className="flex items-center gap-4">
+                    <Button
+                      onClick={() => {
+                        setActiveTab("account")
+                      }}
+                    >
+                      Previous
+                    </Button>
+                    <Button
+                      onClick={() => {
+                        setActiveTab("password")
+                      }}
+                    >
+                      Next
+                    </Button>
+                  </CardFooter>
+                </Card>
+              </TabsContent>
+              <TabsContent value="password">
+                <Card>
+                  <CardHeader>
+                    <CardTitle>Password</CardTitle>
+                    <CardDescription>
+                      Change your password here. After saving, you'll be logged out.
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent className="space-y-2">
+                    <div className="space-y-1">
+                      <Label htmlFor="current-password">
+                        Current password
+                      </Label>
+                      <Input
+                        type="password"
+                        id="current-password"
+                        value={formState.password}
+                        onChange={(e) => setFormState({
+                          ...formState,
+                          password: e.target.value
+                        })}
+                      />
+                    </div>
+                    <div className="space-y-1">
+                      <Label htmlFor="new-password">
+                        New password
+                      </Label>
+                      <Input
+                        id="new-password"
+                        type="password"
+                        value={formState.newPassword}
+                        onChange={(e) => setFormState({
+                          ...formState,
+                          newPassword: e.target.value
+                        })}
+                      />
+                    </div>
+                  </CardContent>
+                  <CardFooter className="flex items-center gap-4">
+                    <Button
+                      onClick={() => {
+                        setActiveTab("email")
+                      }}
+                    >
+                      Previous
+                    </Button>
+                    <DialogTrigger asChild>
+                      <Button type="submit">
+                        Save changes
+                      </Button>
+                    </DialogTrigger>
+                  </CardFooter>
+                </Card>
+              </TabsContent>
+
+              {/* Componentized */}
+              {/* <TabsContent value="account">
                 <AccountTab
                   formState={formState}
                   setFormState={setFormState}
@@ -127,46 +227,6 @@ export default function Modal() {
                 />
               </TabsContent>
               <TabsContent value="email">
-                {/* <Card>
-                <CardHeader>
-                  <CardTitle>Email</CardTitle>
-                  <CardDescription>
-                    Change your email here. After saving, you'll be logged out.
-                  </CardDescription>
-                </CardHeader>
-                <CardContent className="space-y-2">
-                  <div className="space-y-1">
-                    <Label htmlFor="email">
-                      Email
-                    </Label>
-                    <Input
-                      id="email"
-                      type="email"
-                      value={formState.email}
-                      onChange={(e) => setFormState({
-                        ...formState,
-                        email: e.target.value
-                      })}
-                    />
-                  </div>
-                </CardContent>
-                <CardFooter className="flex items-center gap-4">
-                  <Button
-                    onClick={() => {
-                      setActiveTab("account")
-                    }}
-                  >
-                    Previous
-                  </Button>
-                  <Button
-                    onClick={() => {
-                      setActiveTab("password")
-                    }}
-                  >
-                    Next
-                  </Button>
-                </CardFooter>
-              </Card> */}
                 <EmailTab
                   formState={formState}
                   setFormState={setFormState}
@@ -174,64 +234,12 @@ export default function Modal() {
                 />
               </TabsContent>
               <TabsContent value="password">
-                {/* <Card>
-                <CardHeader>
-                  <CardTitle>Password</CardTitle>
-                  <CardDescription>
-                    Change your password here. After saving, you'll be logged out.
-                  </CardDescription>
-                </CardHeader>
-                <CardContent className="space-y-2">
-                  <div className="space-y-1">
-                    <Label htmlFor="current-password">
-                      Current password
-                    </Label>
-                    <Input
-                      type="password"
-                      id="current-password"
-                      value={formState.password}
-                      onChange={(e) => setFormState({
-                        ...formState,
-                        password: e.target.value
-                      })}
-                    />
-                  </div>
-                  <div className="space-y-1">
-                    <Label htmlFor="new-password">
-                      New password
-                    </Label>
-                    <Input
-                      id="new-password"
-                      type="password"
-                      value={formState.newPassword}
-                      onChange={(e) => setFormState({
-                        ...formState,
-                        newPassword: e.target.value
-                      })}
-                    />
-                  </div>
-                </CardContent>
-                <CardFooter className="flex items-center gap-4">
-                  <Button
-                    onClick={() => {
-                      setActiveTab("email")
-                    }}
-                  >
-                    Previous
-                  </Button>
-                  <DialogTrigger asChild>
-                    <Button type="submit">
-                      Save changes
-                    </Button>
-                  </DialogTrigger>
-                </CardFooter>
-              </Card> */}
                 <PasswordTab
                   formState={formState}
                   setFormState={setFormState}
                   setActiveTab={setActiveTab}
                 />
-              </TabsContent>
+              </TabsContent> */}
             </Tabs>
           </form>
         </DialogContent>
